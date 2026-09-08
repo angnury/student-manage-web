@@ -11,3 +11,7 @@ mybatis-plus:
 
 server:
   port: 8080
+
+  jwt:
+    secret: mySecretKeyForStudentManageSystem2026  # 正式上线要改成复杂随机串
+    expiration: 7200000  # 2小时（单位毫秒）
