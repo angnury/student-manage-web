@@ -1,0 +1,22 @@
+{
+  "code": 200,
+  "message": "成功",
+  "data": [
+    {
+      "sid": "202401",
+      "cid": "C001",
+      "term": "2026秋",
+      "usual": 80,
+      "finalScore": 85,
+      "total": 83
+    },
+    {
+      "sid": "202401",
+      "cid": "C002",
+      "term": "2026秋",
+      "usual": 78,
+      "finalScore": 82,
+      "total": 80
+    }
+  ]
+}

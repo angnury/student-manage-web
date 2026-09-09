@@ -11,3 +11,33 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JT
 ### 分页查询学生列表（管理员）
 GET http://localhost:8080/api/admin/students?page=1&size=10
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4ODkzNzU3OSwiZXhwIjoxNzg4OTQ0Nzc5fQ.6-7eE2V5G14wCttbG4igzbA4i6TJy6MnAMds8Pz2yTA
+
+###查询成绩
+GET http://localhost:8080/api/teacher/students/202401/scores
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4ODk0MjM4NCwiZXhwIjoxNzg4OTQ5NTg0fQ.Sji73Rbf10jPJqnz4Uwt37gi-xiki3C6RJzltQc6fbw
+
+###录入成绩
+POST http://localhost:8080/api/teacher/scores
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4ODk0MjM4NCwiZXhwIjoxNzg4OTQ5NTg0fQ.Sji73Rbf10jPJqnz4Uwt37gi-xiki3C6RJzltQc6fbw
+
+{
+    "sid": "202401",
+    "cid": "C001",
+    "term": "2026秋",
+    "usual": 88,
+    "finalScore": 92
+}
+
+###录入成绩
+POST http://localhost:8080/api/teacher/scores
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4ODk0MjM4NCwiZXhwIjoxNzg4OTQ5NTg0fQ.Sji73Rbf10jPJqnz4Uwt37gi-xiki3C6RJzltQc6fbw
+
+{
+  "sid": "202401",
+  "cid": "C003",
+  "term": "2026秋",
+  "usual": 75,
+  "finalScore": 80
+}
