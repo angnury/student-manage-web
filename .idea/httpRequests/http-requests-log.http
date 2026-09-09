@@ -1,3 +1,47 @@
+GET http://localhost:8080/api/admin/statistics/score-distribution
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4ODkzNzU3OSwiZXhwIjoxNzg4OTQ0Nzc5fQ.6-7eE2V5G14wCttbG4igzbA4i6TJy6MnAMds8Pz2yTA
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2026-09-09T164113.200.json
+
+###
+
+GET http://localhost:8080/api/admin/statistics/class-average
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4ODkzNzU3OSwiZXhwIjoxNzg4OTQ0Nzc5fQ.6-7eE2V5G14wCttbG4igzbA4i6TJy6MnAMds8Pz2yTA
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2026-09-09T163824.200.json
+
+###
+
+GET http://localhost:8080/api/admin/statistics/score-distributio
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4ODkzNzU3OSwiZXhwIjoxNzg4OTQ0Nzc5fQ.6-7eE2V5G14wCttbG4igzbA4i6TJy6MnAMds8Pz2yTA
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2026-09-09T163819.404.json
+
+###
+
+GET http://localhost:8080/api/admin/students?page=1&size=10
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4ODkzNzU3OSwiZXhwIjoxNzg4OTQ0Nzc5fQ.6-7eE2V5G14wCttbG4igzbA4i6TJy6MnAMds8Pz2yTA
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2026-09-09T163746.200.json
+
+###
+
 GET http://localhost:8080/api/teacher/students/202401/scores
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4ODk0MjM4NCwiZXhwIjoxNzg4OTQ5NTg0fQ.Sji73Rbf10jPJqnz4Uwt37gi-xiki3C6RJzltQc6fbw
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7

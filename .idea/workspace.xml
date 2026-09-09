@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98eec434-c038-4b10-aa8e-873ca18bbf5d" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/student-web/student-web/src/main/java/com/manage/student/controller/ScoreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student-web/student-web/src/main/java/com/manage/student/entity/Score.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student-web/student-web/src/main/java/com/manage/student/mapper/ScoreMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student-web/student-web/src/main/java/com/manage/student/controller/StatisticsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.http" beforeDir="false" afterPath="$PROJECT_DIR$/test.http" afterDir="false" />
@@ -38,6 +36,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "HTTP 请求.test | 分页查询学生列表（管理员）#2.executor": "Run",
+    "HTTP 请求.test | 分页查询学生列表（管理员）#3.executor": "Run",
     "HTTP 请求.test | 分页查询学生列表（管理员）.executor": "Run",
     "HTTP 请求.test | 录入成绩#2.executor": "Run",
     "HTTP 请求.test | 录入成绩.executor": "Run",
@@ -64,19 +64,19 @@
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.StudentWebApplication">
-    <configuration name="test | 登录获取 Token" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" requestIdentifier="登录获取 Token" runType="运行单个请求">
-      <method v="2" />
-    </configuration>
-    <configuration name="test | 分页查询学生列表（管理员）" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="3" requestIdentifier="分页查询学生列表（管理员）" runType="运行单个请求">
-      <method v="2" />
-    </configuration>
     <configuration name="test | 查询成绩" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="4" requestIdentifier="查询成绩" runType="运行单个请求">
       <method v="2" />
     </configuration>
-    <configuration name="test | 录入成绩" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="5" requestIdentifier="录入成绩" runType="运行单个请求">
+    <configuration name="test | 录入成绩#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="6" requestIdentifier="录入成绩#2" runType="运行单个请求">
       <method v="2" />
     </configuration>
-    <configuration name="test | 录入成绩#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="6" requestIdentifier="录入成绩#2" runType="运行单个请求">
+    <configuration name="test | 分页查询学生列表（管理员）#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="7" requestIdentifier="分页查询学生列表（管理员）#2" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
+    <configuration name="test | 分页查询学生列表（管理员）#3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="8" requestIdentifier="分页查询学生列表（管理员）#3" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
+    <configuration name="test | 成绩分布/班级平均分（管理员）#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="7" requestIdentifier="成绩分布/班级平均分（管理员）#1" runType="运行单个请求">
       <method v="2" />
     </configuration>
     <configuration name="StudentWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -88,11 +88,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP 请求.test | 成绩分布/班级平均分（管理员）#1" />
+        <item itemvalue="HTTP 请求.test | 分页查询学生列表（管理员）#3" />
+        <item itemvalue="HTTP 请求.test | 分页查询学生列表（管理员）#2" />
         <item itemvalue="HTTP 请求.test | 查询成绩" />
         <item itemvalue="HTTP 请求.test | 录入成绩#2" />
-        <item itemvalue="HTTP 请求.test | 录入成绩" />
-        <item itemvalue="HTTP 请求.test | 登录获取 Token" />
-        <item itemvalue="HTTP 请求.test | 分页查询学生列表（管理员）" />
       </list>
     </recent_temporary>
   </component>
@@ -112,7 +112,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1788938928568</updated>
-      <workItem from="1788938929814" duration="3883000" />
+      <workItem from="1788938929814" duration="4186000" />
     </task>
     <servers />
   </component>
