@@ -1,13 +1,18 @@
 package com.manage.student;
 
-import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.manage.student.mapper")  // 添加这一行
 public class StudentWebApplication {
+
 	public static void main(String[] args) {
+		// 临时生成 BCrypt 密文
+		//String rawPassword = "123456";
+		//String encodedPassword = new BCryptPasswordEncoder().encode(rawPassword);
+		//System.out.println("生成的密文: " + encodedPassword);
+
 		SpringApplication.run(StudentWebApplication.class, args);
 	}
 }
