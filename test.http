@@ -7,3 +7,7 @@ username=admin&password=123456
 ### 获取当前用户信息（需要登录）
 GET http://localhost:8080/api/user/me
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4ODkzNzEwNiwiZXhwIjoxNzg4OTQ0MzA2fQ.XiIs-kCSPKtyU8vSeq2GdKdO6lgqOz-uMLse5WpdXxU
+
+### 分页查询学生列表（管理员）
+GET http://localhost:8080/api/admin/students?page=1&size=10
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4ODkzNzU3OSwiZXhwIjoxNzg4OTQ0Nzc5fQ.6-7eE2V5G14wCttbG4igzbA4i6TJy6MnAMds8Pz2yTA

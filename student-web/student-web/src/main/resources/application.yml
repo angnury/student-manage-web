@@ -3,11 +3,19 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/student_web?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
-    password: 123456  # ⚠️ 改成你自己的密码！
+    password: 123456
 
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  # 开启分页插件（MyBatis-Plus 3.5+ 可通过配置开启）
+  global-config:
+    db-config:
+      id-type: auto
+  # 分页配置（启用分页）
+  page:
+    enabled: true
 
 server:
   port: 8080
