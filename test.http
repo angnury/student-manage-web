@@ -42,10 +42,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JT
   "finalScore": 80
 }
 
-### 成绩分布/班级平均分（管理员）
+### 成绩分布（管理员）
 GET http://localhost:8080/api/admin/statistics/score-distribution
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4ODkzNzU3OSwiZXhwIjoxNzg4OTQ0Nzc5fQ.6-7eE2V5G14wCttbG4igzbA4i6TJy6MnAMds8Pz2yTA
 
-### 成绩分布/班级平均分（管理员）
+### 班级平均分（管理员）
 GET http://localhost:8080/api/admin/statistics/class-average
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4ODkzNzU3OSwiZXhwIjoxNzg4OTQ0Nzc5fQ.6-7eE2V5G14wCttbG4igzbA4i6TJy6MnAMds8Pz2yTA
