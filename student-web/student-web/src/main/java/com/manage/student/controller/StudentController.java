@@ -2,6 +2,7 @@ package com.manage.student.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.manage.student.common.RequireRole;
 import com.manage.student.common.Result;
 import com.manage.student.entity.Student;
 import com.manage.student.entity.SysUser;
@@ -13,8 +14,12 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 学生学籍管理接口（仅管理员可访问）。
+ */
 @RestController
 @RequestMapping("/api/admin/students")
+@RequireRole("ADMIN")
 public class StudentController {
 
     @Autowired
@@ -26,7 +31,7 @@ public class StudentController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    // 分页查询（已存在）
+    /** 分页 + 多条件模糊查询 */
     @GetMapping
     public Result<?> listStudents(
             @RequestParam(defaultValue = "1") Integer page,
@@ -43,30 +48,34 @@ public class StudentController {
         return Result.success(pageResult);
     }
 
-    // 新增
+    /**
+     * 新增学生。
+     * 学籍与登录账号必须在同一个事务里创建，任何一步失败都整体回滚，
+     * 避免出现"有学籍但登录不了"或"有账号但查不到人"的脏数据。
+     */
     @PostMapping
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Result<?> addStudent(@RequestBody Student student) {
-        // 1. 检查学号是否已存在
         if (studentMapper.selectById(student.getSid()) != null) {
             return Result.error("学号已存在");
         }
-        // 2. 插入 student 表
+
         int rows = studentMapper.insert(student);
         if (rows == 0) {
             return Result.error("新增学生失败");
         }
-        // 3. 创建系统账号（默认密码 123456）
+
         SysUser user = new SysUser();
-        user.setUsername(student.getSid());   // ← 这里改成 getSid()
+        user.setUsername(student.getSid());          // 用户名 = 学号
         user.setPassword(passwordEncoder.encode("123456"));
         user.setRole("STUDENT");
         user.setStatus("1");
         sysUserMapper.insert(user);
+
         return Result.success("新增成功");
     }
 
-    // 修改
+    /** 修改学生 */
     @PutMapping("/{sid}")
     public Result<?> updateStudent(@PathVariable String sid, @RequestBody Student student) {
         student.setSid(sid);
@@ -74,9 +83,9 @@ public class StudentController {
         return rows > 0 ? Result.success("修改成功") : Result.error("修改失败");
     }
 
-    // 删除
+    /** 删除学生，同步清理其登录账号 */
     @DeleteMapping("/{sid}")
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Result<?> deleteStudent(@PathVariable String sid) {
         int rows = studentMapper.deleteById(sid);
         if (rows == 0) {

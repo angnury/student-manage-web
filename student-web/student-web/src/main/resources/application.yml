@@ -1,25 +1,24 @@
+server:
+  port: 8080
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/student_web?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
-    username: root
-    password: 123456
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:123456}
 
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
-  # 开启分页插件（MyBatis-Plus 3.5+ 可通过配置开启）
   global-config:
     db-config:
       id-type: auto
-  # 分页配置（启用分页）
-  page:
-    enabled: true
 
-server:
-  port: 8080
-
-  jwt:
-    secret: mySecretKeyForStudentManageSystem2026  # 正式上线要改成复杂随机串
-    expiration: 7200000  # 2小时（单位毫秒）
+# 注意：JWT 配置必须与 server 同级。
+# 之前写在 server 下面，属性名变成 server.jwt.secret，
+# 而 JwtUtil 读的是 jwt.secret，导致这里配置根本没生效、实际用的是代码里的默认值。
+jwt:
+  secret: ${JWT_SECRET:mySecretKeyForStudentManageSystem2026}
+  expiration: 7200000

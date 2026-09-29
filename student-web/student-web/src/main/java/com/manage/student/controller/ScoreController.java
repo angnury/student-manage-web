@@ -1,49 +1,35 @@
 package com.manage.student.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.manage.student.common.RequireRole;
 import com.manage.student.common.Result;
 import com.manage.student.entity.Score;
-import com.manage.student.mapper.ScoreMapper;
+import com.manage.student.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 成绩管理接口（教师 / 管理员）。
+ * <p>
+ * 这里只做参数接收与结果返回，成绩计算等业务规则在 {@link ScoreService}。
+ */
 @RestController
 @RequestMapping("/api/teacher")
+@RequireRole({"TEACHER", "ADMIN"})
 public class ScoreController {
 
     @Autowired
-    private ScoreMapper scoreMapper;
+    private ScoreService scoreService;
 
-    // 1. 查询某个学生的所有成绩（根据学号）
+    /** 查询某个学生的所有成绩 */
     @GetMapping("/students/{sid}/scores")
     public Result<?> getScoresByStudent(@PathVariable String sid) {
-        LambdaQueryWrapper<Score> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(Score::getSid, sid);
-        return Result.success(scoreMapper.selectList(wrapper));
+        return Result.success(scoreService.listByStudent(sid));
     }
 
-    // 2. 录入/更新成绩（教师录入）
+    /** 录入 / 更新成绩，总分由后端统一计算 */
     @PostMapping("/scores")
     public Result<?> saveOrUpdateScore(@RequestBody Score score) {
-        if (score.getUsual() == null || score.getFinalScore() == null) {
-            return Result.error("平时分和期末分不能为空");
-        }
-        int total = (int) Math.round(score.getUsual() * 0.4 + score.getFinalScore() * 0.6);
-        score.setTotal(total);
-
-        // 检查是否存在
-        LambdaQueryWrapper<Score> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(Score::getSid, score.getSid())
-                .eq(Score::getCid, score.getCid())
-                .eq(Score::getTerm, score.getTerm());
-        Score existing = scoreMapper.selectOne(wrapper);
-
-        if (existing != null) {
-            scoreMapper.updateScore(score);
-            return Result.success("成绩更新成功");
-        } else {
-            scoreMapper.insertScore(score);
-            return Result.success("成绩录入成功");
-        }
+        boolean ok = scoreService.saveOrUpdateScore(score);
+        return ok ? Result.success("保存成功") : Result.error("保存失败");
     }
 }
