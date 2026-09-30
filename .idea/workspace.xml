@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="98eec434-c038-4b10-aa8e-873ca18bbf5d" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-web/student-web/src/main/java/com/manage/student/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/student-web/student-web/src/main/java/com/manage/student/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.http" beforeDir="false" afterPath="$PROJECT_DIR$/test.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,36 +31,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP 请求.test | 分页查询学生列表（管理员）#2.executor": "Run",
-    "HTTP 请求.test | 分页查询学生列表（管理员）#3.executor": "Run",
-    "HTTP 请求.test | 分页查询学生列表（管理员）.executor": "Run",
-    "HTTP 请求.test | 录入成绩#2.executor": "Run",
-    "HTTP 请求.test | 录入成绩.executor": "Run",
-    "HTTP 请求.test | 成绩分布/班级平均分（管理员）#1.executor": "Run",
-    "HTTP 请求.test | 查询成绩.executor": "Run",
-    "HTTP 请求.test | 登录获取 Token.executor": "Run",
-    "HTTP 请求.test | 获取当前用户信息（需要登录）.executor": "Run",
-    "Maven.student-web [clean].executor": "Run",
-    "Maven.student-web [compile].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.StudentWebApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/deepseek/student-manage-web",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP 请求.test | 分页查询学生列表（管理员）#2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP 请求.test | 分页查询学生列表（管理员）#3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP 请求.test | 分页查询学生列表（管理员）.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP 请求.test | 录入成绩#2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP 请求.test | 录入成绩.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP 请求.test | 成绩分布/班级平均分（管理员）#1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP 请求.test | 查询成绩.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP 请求.test | 登录获取 Token.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP 请求.test | 获取当前用户信息（需要登录）.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.student-web [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.student-web [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.StudentWebApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/deepseek/student-manage-web&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.StudentWebApplication">
     <configuration name="test | 录入成绩#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="6" requestIdentifier="录入成绩#2" runType="运行单个请求">
       <method v="2" />
@@ -113,7 +111,9 @@
       <updated>1788938928568</updated>
       <workItem from="1788938929814" duration="5241000" />
       <workItem from="1788945545559" duration="1220000" />
-      <workItem from="1789007898413" duration="1226000" />
+      <workItem from="1789007898413" duration="1592000" />
+      <workItem from="1790761189190" duration="2813000" />
+      <workItem from="1790770719362" duration="1167000" />
     </task>
     <servers />
   </component>
