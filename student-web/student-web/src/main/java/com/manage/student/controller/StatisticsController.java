@@ -2,7 +2,9 @@ package com.manage.student.controller;
 
 import com.manage.student.common.RequireRole;
 import com.manage.student.common.Result;
+import com.manage.student.mapper.CourseMapper;
 import com.manage.student.mapper.ScoreMapper;
+import com.manage.student.mapper.StudentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +29,23 @@ public class StatisticsController {
 
     @Autowired
     private ScoreMapper scoreMapper;
+
+    @Autowired
+    private StudentMapper studentMapper;
+
+    @Autowired
+    private CourseMapper courseMapper;
+
+    /** 工作台概览：几个关键计数，用于填充首页卡片 */
+    @GetMapping("/overview")
+    public Result<?> overview() {
+        Map<String, Object> data = new LinkedHashMap<>();
+        data.put("studentCount", studentMapper.selectCount(null));
+        data.put("classCount", studentMapper.countDistinctClass());
+        data.put("courseCount", courseMapper.selectCount(null));
+        data.put("scoreCount", scoreMapper.selectCount(null));
+        return Result.success(data);
+    }
 
     /** 成绩分布：各分数段人数 */
     @GetMapping("/score-distribution")

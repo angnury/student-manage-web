@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.manage.student.entity.Score;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -18,6 +19,30 @@ public interface ScoreMapper extends BaseMapper<Score> {
 
     @Update("UPDATE score SET usual = #{usual}, `final` = #{finalScore}, total = #{total} WHERE sid = #{sid} AND cid = #{cid} AND term = #{term}")
     int updateScore(Score score);
+
+    /**
+     * 查询某个学生的成绩，并关联课程名（前端展示需要 cname 而不是只有 cid）。
+     * cid 传空时返回该生全部成绩；传入时只返回对应课程。
+     */
+    @Select("""
+            <script>
+            SELECT sc.sid     AS sid,
+                   sc.cid     AS cid,
+                   c.cname    AS cname,
+                   sc.term    AS term,
+                   sc.usual   AS usual,
+                   sc.`final` AS finalScore,
+                   sc.total   AS total
+            FROM score sc
+            LEFT JOIN course c ON c.cid = sc.cid
+            WHERE sc.sid = #{sid}
+            <if test="cid != null and cid != ''">
+                AND sc.cid = #{cid}
+            </if>
+            ORDER BY sc.term DESC, sc.cid ASC
+            </script>
+            """)
+    List<Map<String, Object>> selectScoresByStudent(@Param("sid") String sid, @Param("cid") String cid);
 
     /**
      * 成绩分布：按分数段分组统计人数。
