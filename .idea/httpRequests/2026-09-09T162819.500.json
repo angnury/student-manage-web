@@ -1,6 +1,0 @@
-{
-  "timestamp": "2026-09-09T08:28:19.039+00:00",
-  "status": 500,
-  "error": "Internal Server Error",
-  "path": "/api/teacher/scores"
-}
