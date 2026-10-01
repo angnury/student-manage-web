@@ -1,0 +1,9 @@
+{
+  "code": 200,
+  "message": "成功",
+  "data": {
+    "role": "ADMIN",
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4ODkzOTUxNSwiZXhwIjoxNzg4OTQ2NzE1fQ.0rLbvpUGZXbpvvMvPu8aUSpl-ZZir7r--8YtdaS7lRM",
+    "username": "admin"
+  }
+}

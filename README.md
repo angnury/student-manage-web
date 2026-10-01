@@ -1,12 +1,11 @@
-
----
-
-## 二、Spring Boot 后端（student-manage-web）
-
-```markdown
- 学生综合信息管理系统 · Web 后端（Spring Boot 3）
+# 学生综合信息管理系统 · Web 后端（Spring Boot 3）
 
 > 前后端分离 · RESTful API · JWT 鉴权 · MyBatis-Plus
+>
+> 🌐 **在线演示：** http://47.98.192.161
+> （用户名 `admin` / 密码 `123456`）
+> （用户名 `T001` / 密码 `123456`）
+> （用户名 `202401` / 密码 `123456`）
 
 ## 项目简介
 
@@ -40,7 +39,33 @@
 
 ## 数据库
 
-使用 `student_web.sql` 脚本初始化，共 7 张表，含索引与外键。默认账号密码均为 `123456`（BCrypt 密文已预置）。
+使用 `student_web.sql` 脚本初始化，共 7 张表，含索引与外键：
+
+| 表名 | 说明 |
+|---|---|
+| sys_user | 登录用户表（认证与业务分离） |
+| student | 学生学籍表 |
+| teacher | 教师表 |
+| course | 课程表 |
+| score | 成绩表（联合主键 sid+cid+term） |
+| timetable | 课表 |
+| reward_punish | 奖惩表 |
+
+默认账号密码均为 `123456`（BCrypt 密文已预置）。
+
+## 项目结构
+
+```
+src/main/java/com/manage/student/
+├── controller/   # 接口层
+├── service/      # 业务逻辑
+├── mapper/       # MyBatis-Plus Mapper
+├── entity/       # 数据库实体
+├── common/       # 统一返回 Result
+├── config/       # 配置（分页、BCrypt、拦截器）
+├── interceptor/  # JWT 拦截器
+└── utils/        # JwtUtil
+```
 
 ## 如何运行
 
@@ -50,3 +75,24 @@
 4. 在项目根目录执行：
    ```bash
    mvn spring-boot:run
+   ```
+5. 访问 `http://localhost:8080/api/auth/login?username=admin&password=123456` 验证
+
+## 部署
+
+- **云服务器**：阿里云 ECS（Ubuntu 22.04，2核2G）
+- **反向代理**：Nginx
+- **在线地址**：http://47.98.192.161
+
+## 默认账号
+
+| 角色 | 用户名 | 密码 |
+|---|---|---|
+| 管理员 | admin | 123456 |
+| 教师 | T001 | 123456 |
+| 学生 | 202401 | 123456 |
+
+## 作者
+
+- 李林罡
+- GitHub：[angnury](https://github.com/angnury)
